@@ -13,7 +13,7 @@ function App() {
         <Route path="/manager" element={<ManagerDashboard />} />
         <Route path="/chef" element={<ChefDashboard />} />
         <Route path="/waiter" element={<WaiterDashboard/>} />
-        {/* Add more routes here */}
+        
       </Routes>
     </Router>
   );
