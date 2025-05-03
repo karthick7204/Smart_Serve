@@ -47,7 +47,7 @@ export function Bill({
   };
 
   return (
-    <div className="absolute right-28 w-96 max-h-[90vh] bg-teal-300 border border-gray-300 rounded-lg shadow-lg p-4 overflow-y-auto">
+    <div className="absolute right-28 w-96 max-h-[90vh] bg-white border border-gray-300 rounded-lg shadow-lg p-4 overflow-y-auto">
       <h2 className="text-xl font-semibold mb-4">🧾 Bill Summary</h2>
 
       <ul className="space-y-4 text-sm">

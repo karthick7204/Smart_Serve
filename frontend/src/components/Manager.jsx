@@ -111,9 +111,6 @@ export function Manager() {
           </div>
         );
 
-      case "viewItems":
-        return <p className="text-xl">👀 View Items Page</p>;
-
       case "Bills":
         return <BillsCheck bills={bills} setBills={setBills} />;
 
@@ -124,13 +121,18 @@ export function Manager() {
         return <p className="text-xl">👤 Create User Page</p>;
 
       default:
-        return <h1 className="text-5xl font-bold text-center text-gray-800">Smart Serve</h1>;
+        return(
+          <div>
+               <h1 className="text-5xl font-bold text-center text-gray-800">Smart Serve</h1>;
+              
+          </div>
+
+        ) 
     }
   };
-
   return (
     <div className="container min-h-screen flex flex-col">
-      <div className="relative flex items-center bg-gray-800 text-white px-4 py-3">
+      <div className="relative flex items-center bg-black text-white px-4 py-3">
         <button onClick={() => setSidebarOpen(!isSidebarOpen)} className="mr-4 focus:outline-none">
           <div className="space-y-1">
             <div className="w-6 h-1 bg-white"></div>
@@ -143,10 +145,9 @@ export function Manager() {
 
       <div className="flex flex-1 fixed top-0 left-0 h-screen">
         {isSidebarOpen && (
-          <div className="w-64 bg-gray-200 p-4 space-y-4 shadow-md">
+          <div className="w-64 bg-gray-200 p-4 space-y-4 mt-14 shadow-md md:block absolute z-10 top-0 left-0 lg:w-64">
             <button onClick={() => setActiveView("home")} className="w-full text-left hover:text-blue-600">🏠 Home</button>
             <button onClick={() => setActiveView("takeOrder")} className="w-full text-left hover:text-blue-600">📋 Take Order</button>
-            <button onClick={() => setActiveView("viewItems")} className="w-full text-left hover:text-blue-600">👀 View Items</button>
             <button onClick={() => setActiveView("Bills")} className="w-full text-left hover:text-blue-600">💵 Bills</button>
             <button onClick={() => setActiveView("addItem")} className="w-full text-left hover:text-blue-600">➕ Add Item</button>
             <button onClick={() => setActiveView("createUser")} className="w-full text-left hover:text-blue-600">👤 Create User</button>
@@ -155,7 +156,9 @@ export function Manager() {
         )}
       </div>
 
-      <div className="ml-64 flex-1 p-6">{renderContent()}</div>
+      <div className="ml-64 flex-1 p-6 md:ml-16 lg:ml-64">
+        {renderContent()}
+      </div>
     </div>
   );
 }
