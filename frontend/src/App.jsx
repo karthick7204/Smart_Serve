@@ -1,21 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ManagerDashboard from './pages/ManagerDashboard';
-import ChefDashboard from './pages/ChefDashboard';
-import Login from './pages/login';
-import WaiterDashboard from './pages/waiterDashboard';
+import { ChefDashboard } from './components/ChefDashboard';
+import { LandingPage } from './components/LandingPage';
+import { Login } from './components/Login';
+import { Manager } from './components/Manager';
 
 function App() {
   return (
-    <Router>
+   
+    <Manager />
+    
+   /* 
+   <Router>
       <Routes>
-      <Route path="/" element={<Login />} />
-        <Route path="/manager" element={<ManagerDashboard />} />
-        <Route path="/chef" element={<ChefDashboard />} />
-        <Route path="/waiter" element={<WaiterDashboard/>} />
-        
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/chef-dashboard" element={<ChefDashboard />} />
+        <Route path="/manager" element={<Manager />} />
       </Routes>
-    </Router>
+    </Router> 
+    */
   );
 }
 
